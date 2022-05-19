@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-//import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-//import { Rings } from 'react-loader-spinner';
+import { Rings } from 'react-loader-spinner';
 
 import s from './ImageGallery.module.css';
 import ImageGalleryItem from '../ImageGalleryItem/ImageGalleryItem';
@@ -28,6 +27,7 @@ class ImageGallery extends Component {
     if (prevName !== nextName) {
       this.setState(
         {
+          gallery: '',
           status: 'pending',
           link:
             'https://pixabay.com/api/?q=' +
@@ -105,10 +105,9 @@ class ImageGallery extends Component {
     console.log(gallery);
     if (status === 'pending') {
       return (
-        <div>Loading...</div>
-        /*        <div className={s.spin}>
+        <div className={s.spin}>
           <Rings height="70" width="70" color="orange" ariaLabel="loading" />
-        </div>*/
+        </div>
       );
     }
 
