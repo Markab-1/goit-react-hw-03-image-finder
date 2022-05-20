@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Notiflix from 'notiflix';
+import PropTypes from 'prop-types';
 
 import s from './Searchbar.module.css';
 
@@ -46,3 +47,9 @@ class Searchbar extends Component {
 }
 
 export default Searchbar;
+
+Searchbar.propTypes = {
+  state: PropTypes.shape({
+    imgName: PropTypes.string,
+  }),
+};

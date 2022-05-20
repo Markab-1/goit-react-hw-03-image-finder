@@ -1,4 +1,5 @@
 import s from './ImageGalleryItem.module.css';
+import PropTypes from 'prop-types';
 
 const ImageGalleryItem = ({ webformatURL, setActiveIdx }) => {
   return (
@@ -9,3 +10,7 @@ const ImageGalleryItem = ({ webformatURL, setActiveIdx }) => {
 };
 
 export default ImageGalleryItem;
+
+ImageGalleryItem.propTypes = {
+  webformatURL: PropTypes.string.isRequired,
+};
