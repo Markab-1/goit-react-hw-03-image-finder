@@ -42,13 +42,15 @@ class ImageGallery extends Component {
     const { imgName } = this.props;
 
     fetchImg(imgName, pageNumber)
-      .then(data =>
+      .then(data => {
         this.setState({
           gallery: [...this.state.gallery, ...data.hits],
           status: 'resolved',
-          showBtn: true,
-        })
-      )
+        });
+        if (data.hits.length > 0) {
+          this.setState({ showBtn: true });
+        }
+      })
       .catch(error => this.setState({ error, status: 'rejected' }));
 
     this.setState(prevState => ({
